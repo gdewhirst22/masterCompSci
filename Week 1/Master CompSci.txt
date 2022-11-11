@@ -1,0 +1,156 @@
+visual studio plugins
+
+node -v
+
+dracula at night
+prettier
+html css support
+javascript
+
+autosave option:
+in an API using NASAs API for example. Gets expensive to save each time as request to NASA each save.
+Get blacklisted
+
+chocolatey optional for installing programs
+
+missed 10 mins 11:20 - 11:30
+
+git is collaboration software
+
+github uses markdown language
+
+topic 1 - binary and logic
+
+binary conditions
+
+logic gates: two inputs, one boolean output. true == 1, false == 0
+
+(0,0) -> 0
+(0,1) -> 0
+(1,0) -> 0
+(1,1) -> 1
+AND gate
+
+NOT gate
+0->1
+1->0
+
+OR gate
+(0,0) -> 0
+(0,1) -> 1
+(1,0) -> 1
+(1,1) -> 1
+
+NAND
+(0,0) -> 1
+(0,1) -> 1
+(1,0) -> 1
+(1,1) -> 0
+
+EXOR
+(0,0) -> 0
+(0,1) -> 1
+(1,0) -> 1
+(1,1) -> 0
+
+EXNOR
+(0,0) -> 1
+(0,1) -> 0
+(1,0) -> 0
+(1,1) -> 1
+
+require A or B AND C i.e. A, !B, C
+A, B, C,
+ !A, B, C
+
+else output 0
+
+C1.
+
+A or (B and C) or not D
+i.e. 
+A, all
+!A, B,C, all
+!(B or C), !D, all.
+
+Challenge 1
+A B C D
+1 all
+0 1 1 0
+0 1 1 1
+0 0 1 0
+0 1 0 0
+0 0 0 0
+
+Challenge 2
+
+not (A or  B) means not A and not B
+
+so all have 0,0 for A, B.
+
+Require (D or C) i.e. all
+Require not C
+i.e. 
+0 0 0 1
+
+hardware and software
+mosfets
+CMOS is volatile 
+
+transistors (mosfets) power delivery and regulation
+correct voltage for each component
+mosfets are easy to use and produce
+PCIe lanes two lanes to send and receieve
+CPU has a limit to the amount of PCIe express lanes it can support
+I.e. more expansion slots for server farms, scientific research
+ central processing unit
+
+arithmetic logic unit - does maths and comparisons
+control unit - coordinates activities. Turns problems into step by step instructions
+and sends to the correct subsystem. It controls the systems resources
+
+CPU
+each core contains an ALU, CU and registers. More cores = more simultaneous tasks
+clock speed = speed of core. Dependent on thermal limitations
+
+RAM
+
+peripheral devices are managed by the kernel 
+
+Javascript
+Dot notation
+used by full stack developer
+symbol -used as key for object when the property is intended to be private 
+
+node filename.js
+
+node is the interpreter which tells our machines how to understand javacript.
+ We need to tell node to run the file so that it can be interpreted and then executed
+
+All non-native languages will have to be interpreted.
+
+string
+toLowerCase()
+trim()
+toUpperCase()
+
+number
+toString()
+toFixed()
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+dynamically typed. It knows what datatype is used automatically (in simple cases)
+
+template literals
+
+if else switch
+
+if(condition){
+//stuff
+} else if (condition2){
+//stuff2
+} else {
+// anything else
+}
