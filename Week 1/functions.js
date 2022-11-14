@@ -40,7 +40,7 @@ function addMeF(num1,num2){
 console.log(addMeF(4,5))
 console.log(addMe(4,5))
 
-// const addMe = function(num1,num2){
-//     return num1 +num2
-// }
-console.log(addMe(5,4))
+const addMe2 = function(num1,num2){
+    return num1 +num2
+}
+console.log(addMe2(5,4))
