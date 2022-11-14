@@ -1,1 +1,30 @@
+git config --global user.name "username"
 git config -- global user.email "email@email.com"
+
+git add "filename" //single file upload
+git add . //adds everything
+git commit -m "comments"
+git push
+
+use all 3
+
+ssh
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+enter
+in user/ssh
+generates ASCII art
++--[ED25519 256]--+        
+|o=.              |        
+|+.o.             |        
+|o.  .      E     |        
+| .   ..   .      |        
+|  . .  oS.       |        
+| . .+o. ...      |        
+|o =o+=o.....     |        
+|+=.+o+=++*  .    |        
+|oo.o++o**.*+.    |        
++----[SHA256]-----+  
+
+key in C:\Users\User\.ssh\id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILYykMZmkJkLeoXJLDnlUpcxmu+NBTOSvV9uuLxf0ZFQ gdewhirst22@gmail.com
+put in SSH keys on github
