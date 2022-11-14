@@ -64,9 +64,3 @@ let obj = {
 
     }
 }
-
-let favHolidayDestinations = [
-    "Venice, Italy",
-    "Paris, France",
-    "Barcelona, Spain"
-]

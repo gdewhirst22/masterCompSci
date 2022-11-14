@@ -6,18 +6,20 @@ console.log(greeting);
 console.log("Hello, what is your name?".length);
 // calculator
 num = 55.5676
-console.log("Hello".toUpperCase());
-console.log(" Hello".trim());
-
 console.log(num.toString());
 console.log(num.toFixed(2));
 console.log(num.toPrecision(3));
-
-const worldString = "Hello, world";
-console.log(worldString.blink());//
 num = Math.sqrt(2)
 console.log(num)
 console.log(Number.isFinite(num))
+console.log("Hello".toUpperCase());
+console.log(" Hello".trim());
+
+
+
+const worldString = "Hello, world";
+console.log(worldString.blink());//
+
 
 let modelOfCar = "Volvo"
 firstName = "Mark"
@@ -28,8 +30,8 @@ console.log(`Hi, my name is ${firstName}. I'm a ${occupation} and I drive a ${mo
 age = "28"
 firstName = "George"
 favouriteColour = "Blue"
-console.log(`Hi, my name is ${firstName}. I'm ${age} 
-years old and my favourite colour is ${favouriteColour}.`)
+// console.log(`Hi, my name is ${firstName}. I'm ${age} 
+// years old and my favourite colour is ${favouriteColour}.`)
 
 breakfast = "cereal"
 lunch = "a sandwich"
@@ -86,7 +88,7 @@ if (hunger == "hungry"){
                 console.log("You aren't old enough");
             }
 
-                let age = 28
+                age = 28
                 country = "UK"
         if (age > 17 && country == "UK"){
             console.log("I can serve you");
@@ -141,7 +143,7 @@ if (hunger == "hungry"){
             console.log("The number is not palindrone")
         }
 
-        let num = 5
+        num = 5
         if(num %3 == 0 && num %5 == 0){
             console.log("fizz buzz")
         } else if(num %3 == 0){
