@@ -37,7 +37,7 @@ class Pet {
         this.playedWith = this.playedWith - (time - this.lastPlayedWith)*7
         this.playedWith = Math.max(0,this.playedWith)
         } else {
-        return "Error: time played with inputs are not numbers."
+        return "Error: time last played with inputs are not numbers."
     }
         this.lastPlayedWith = time;
         this.playedWith = this.playedWith + 40
@@ -54,7 +54,7 @@ class Pet {
         if(typeof(time) == "number" & typeof(this.lastCleaned) == "number") {
     this.cleaned = this.cleaned - (time - this.lastCleaned)*10
     this.cleaned = Math.max(0,this.cleaned)
-        } else {return "Error: time cleaned inputs are not numbers."
+        } else {return "Error: time last cleaned inputs are not numbers."
     }
     this.lastCleaned = time;
     this.cleaned = this.cleaned + 30
