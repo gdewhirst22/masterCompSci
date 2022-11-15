@@ -1,6 +1,0 @@
-
-make hunger level, played with level and cleaned level.
-
-The level goes up to 100. An action adds 30/40/50 to the level.
-You start with 0
-If 100, the pet is already happy
