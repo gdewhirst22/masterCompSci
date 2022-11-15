@@ -33,10 +33,12 @@ class Pet {
 
     }
     playWith (time) {
-        // console.log(this.lastPlayedWith)
+        if(typeof(time) == "number" & typeof(this.lastPlayedWith) == "number") {
         this.playedWith = this.playedWith - (time - this.lastPlayedWith)*7
-        // console.log(this.playedWith)
         this.playedWith = Math.max(0,this.playedWith)
+        } else {
+        return "Error: time played with inputs are not numbers."
+    }
         this.lastPlayedWith = time;
         this.playedWith = this.playedWith + 40
         this.playedWith = Math.min(100,this.playedWith)
@@ -44,13 +46,16 @@ class Pet {
         if(this.playedWith == 100){
             this.statementPlayedWith = this.firstname + `has already been played with.`
     };
-        return `Last played with updated to: ${this.lastPlayedWith} for ${this.firstname}. Played with level is now ${this.playedWith}.\n ${this.statementPlayedWith}`
+        return `Last played with updated to: ${this.lastPlayedWith} for ${this.firstname}. Played with level is now ${this.playedWith.toFixed(2)}.\n ${this.statementPlayedWith}`
     }
     
     clean (time) {
         //time and this.lastCleaned are numbers saying the time last cleaned
+        if(typeof(time) == "number" & typeof(this.lastCleaned) == "number") {
     this.cleaned = this.cleaned - (time - this.lastCleaned)*10
     this.cleaned = Math.max(0,this.cleaned)
+        } else {return "Error: time cleaned inputs are not numbers."
+    }
     this.lastCleaned = time;
     this.cleaned = this.cleaned + 30
    
@@ -60,7 +65,7 @@ class Pet {
         if (this.cleaned== 100){
             this.statementCleaned = this.firstname + `has been fully cleaned.`
         }
-        return `Last cleaned updated to: ${this.lastCleaned} for ${this.firstname}. Cleaned level is now ${this.cleaned}.\n ${this.statementCleaned}`
+        return `Last cleaned updated to: ${this.lastCleaned} for ${this.firstname}. Clean level is now ${this.cleaned.toFixed(2)}.\n ${this.statementCleaned}`
     }
     
     }
@@ -68,11 +73,11 @@ class Pet {
    const Bella = new Pet("Bella", 2, "Dog", "GS", "B&T", "08:00");
 console.log(Bella.petInfo);
 console.log(Bella.feedPet("feedTime"))
-myCyberPet = new CyberPet("petName", "petSurName", "petAge", "petType", "GS", "B&T", "08:00", "cyberPetType1","9","9");
+myCyberPet = new CyberPet("petName", "petSurname", "petAge", "petType", "GS", "B&T", "08:00", "cyberPetType1",9.5,9.7);
 console.log(myCyberPet.feedPet("feedTime"))
-console.log(myCyberPet.playWith("15"))
-console.log(myCyberPet.clean("10"))
-console.log(myCyberPet.clean("11"))
+console.log(myCyberPet.playWith(13))
+console.log(myCyberPet.clean(10.3))
+console.log(myCyberPet.clean(11))
 // console.log(myCyberPet.clean("cleanTime"))
 // console.log(myCyberPet.clean("cleanTime"))
 //    Activity 1…
@@ -83,55 +88,55 @@ console.log(myCyberPet.clean("11"))
 // Create an object instance called “test” from your class and output 
 // it to the console to ensure it’s free from errors
 
-class Rental {
-    constructor(name, address, contactNo, moviesPrices){
-        this.name = name,
-        this.address = address,
-        this.contactNo = contactNo
-        this.moviesPrices = moviesPrices   
-    }
-    get rentalInfo () {
-        return `${this.name} is a rental shop located at ${this.address}. Its phone number is ${this.contactNo} and its available films are ${formatMoviesPrices(moviesPrices)}, with prices listed.`;
-        }
-    get strMovies () {
-        return `${this.moviesPrices.movies}`
-    }
-    get strPrices () {
-        return `${this.moviesPrices.prices}`
-    }
-    set newMovie (strNewMoviePrices) {
-        // console.log(this.moviesPrices[0])
-        this.moviesPrices.movies.push(strNewMoviePrices[0])
-        this.moviesPrices.prices.push(strNewMoviePrices[1])
-    }
-}
+// class Rental {
+//     constructor(name, address, contactNo, moviesPrices){
+//         this.name = name,
+//         this.address = address,
+//         this.contactNo = contactNo
+//         this.moviesPrices = moviesPrices   
+//     }
+//     get rentalInfo () {
+//         return `${this.name} is a rental shop located at ${this.address}. Its phone number is ${this.contactNo} and its available films are ${formatMoviesPrices(moviesPrices)}, with prices listed.`;
+//         }
+//     get strMovies () {
+//         return `${this.moviesPrices.movies}`
+//     }
+//     get strPrices () {
+//         return `${this.moviesPrices.prices}`
+//     }
+//     set newMovie (strNewMoviePrices) {
+//         // console.log(this.moviesPrices[0])
+//         this.moviesPrices.movies.push(strNewMoviePrices[0])
+//         this.moviesPrices.prices.push(strNewMoviePrices[1])
+//     }
+// }
 
-formatMoviesPrices = (moviesPrices) => {
-    str = ""
-    // console.log(moviesPrices[0])
-    for(i = 0; i<moviesPrices.movies.length; i++){
-        str = str + "\n" + moviesPrices.movies[i] + " " + moviesPrices.prices[i]  
-    }
-    // console.log(str)
-    return str
-}
-moviesPrices = {
-    movies: ["mov1","mov2","mov3"],
-    prices:["price1","price2","price3"]
-}
-//process the movies into key value string
-test = new Rental("name1", "address1", "contactNo1", moviesPrices)
-// console.log(formatMoviesPrices(moviesPrices))
+// formatMoviesPrices = (moviesPrices) => {
+//     str = ""
+//     // console.log(moviesPrices[0])
+//     for(i = 0; i<moviesPrices.movies.length; i++){
+//         str = str + "\n" + moviesPrices.movies[i] + " " + moviesPrices.prices[i]  
+//     }
+//     // console.log(str)
+//     return str
+// }
+// moviesPrices = {
+//     movies: ["mov1","mov2","mov3"],
+//     prices:["price1","price2","price3"]
+// }
+// //process the movies into key value string
+// test = new Rental("name1", "address1", "contactNo1", moviesPrices)
+// // console.log(formatMoviesPrices(moviesPrices))
 
-// [["mov1"," £5"], ["\nmov2"," £5"],["\nmov3"," £3"]])
-console.log(test.rentalInfo)
-console.log("\n")
-console.log(test.strMovies)
-//have to decide which type of input to give it. array of movie and price here
-test.newMovie = ["mov4", "price4"]
-console.log("\n")
-console.log(test.strMovies)
-console.log(test.strPrices)
+// // [["mov1"," £5"], ["\nmov2"," £5"],["\nmov3"," £3"]])
+// console.log(test.rentalInfo)
+// console.log("\n")
+// console.log(test.strMovies)
+// //have to decide which type of input to give it. array of movie and price here
+// test.newMovie = ["mov4", "price4"]
+// console.log("\n")
+// console.log(test.strMovies)
+// console.log(test.strPrices)
 
 
 //could also list as objects with key values.
