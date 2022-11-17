@@ -1,0 +1,8 @@
+3 languages, html, css, js
+standalone tags
+<br> line brea
+<img>
+
+external style sheet most often used
+# for id
+. for class
