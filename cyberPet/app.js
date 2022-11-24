@@ -18,22 +18,52 @@ let pet = {
     cleanliness: 50,
     health: 100,
     gameOver: false,
+    arr: [],
+    makeArr(hunger, thirst, happiness, cleanliness,health) {
+        this.arr = [hunger, thirst, happiness, cleanliness,health]
+    },
+    setFromArr(arr){
+        this.hunger= arr[0],
+        this.thirst= arr[1],
+        this.happiness= arr[2],
+        this.cleanliness= arr[3],
+        this.health= arr[4]
+    },
+    
     feedPet() {
         // con
-        this.hunger -= 10;
-        this.cleanliness -= 10;
-        this.happiness -= 5;
+        // this.hunger += 10;
+        // this.cleanliness -= 10;
+        // this.happiness -= 5;
         // pro
-        this.thirst += 10;
+        this.hunger += 10;
         this.health += 10;
     },
     giveDrink() {
         // con
-        this.hunger -= 10;
-        this.cleanliness -= 10;
-        this.thirst -= 10;
+        // this.hunger -= 10;
+        // this.cleanliness -= 10;
+        // this.thirst += 10;
         // pro
-        this.happiness += 5;
+        this.thirst += 5;
+        this.health += 10;
+    },
+    play() {
+        // con
+        // this.hunger += 10;
+        // this.cleanliness -= 10;
+        // this.happiness -= 5;
+        // pro
+        this.happiness += 10;
+        this.health += 10;
+    },
+    clean() {
+        // // con
+        // this.hunger += 10;
+        // this.cleanliness += 10;
+        // this.happiness -= 5;
+        // pro
+        this.cleanliness += 10;
         this.health += 10;
     },
 
@@ -78,7 +108,7 @@ function checkCondition() {
         pet.gameOver = true
     }
     if (pet.cleanliness >= 100){
-        pet.cleanliness
+        pet.cleanliness = 100
     }
     if (pet.cleanliness <= 0){
         pet.cleanliness = 0
@@ -95,12 +125,12 @@ function checkCondition() {
 
 function renderData() {
     health.textContent = `health: ${Math.ceil(pet.health)}`;
-    thirst.textContent = `thirst: ${pet.thirst}`;
-    hunger.textContent = `hunger: ${pet.hunger}`;
-    happiness.textContent = `happiness: ${pet.happiness}`;
-    cleanliness.textContent = `cleanliness: ${pet.cleanliness}`;
+    thirst.textContent = `quenchedness: ${Math.ceil(pet.thirst)}`;
+    hunger.textContent = `nourishment: ${Math.ceil(pet.hunger)}`;
+    happiness.textContent = `happiness: ${Math.ceil(pet.happiness)}`;
+    cleanliness.textContent = `cleanliness: ${Math.ceil(pet.cleanliness)}`;
     if(pet.gameOver == true){
-        console.log(pet.gameOver)
+        // console.log(pet.gameOver)
     gameOver.textContent = `GAME OVER`
     tryAgain.textContent = "Press start to play again"
     clearInterval(int);
@@ -115,10 +145,22 @@ feed.addEventListener("click", () => {
     flag = true;
     renderData();
 });
-
 givedrink.addEventListener("click", () => {
     pet.giveDrink();
     checkCondition();
+    flag = true;
+    renderData();
+});
+
+clean.addEventListener("click", () => {
+    pet.clean();
+    checkCondition();
+    renderData();
+});
+play.addEventListener("click", () => {
+    pet.play();
+    checkCondition();
+    flag = true;
     renderData();
 });
 
@@ -129,6 +171,12 @@ let timerRef = document.querySelector('.timerDisplay');
 let int = null;
 
 document.getElementById('startTimer').addEventListener('click', ()=>{
+    if(int!==null){
+        clearInterval(int);
+    }
+    int = setInterval(displayTimer,10);
+});
+document.getElementById('tryAgain').addEventListener('click', ()=>{
     if(int!==null){
         clearInterval(int);
     }
@@ -144,9 +192,23 @@ document.getElementById('pauseTimer').addEventListener('click', ()=>{
 });
 
 document.getElementById('resetTimer').addEventListener('click', ()=>{
+    if(resetTimer.textContent == "Reset Game"){
     clearInterval(int);
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
-    timerRef.innerHTML = '00 : 00 : 00 : 000 ';
+    timerRef.innerHTML = '00 : 00 : 00 ';
+    resetTimer.textContent = "Start Game"
+    } else {
+        resetTimer.textContent = "Reset Game"
+    if(int!==null){
+        clearInterval(int);
+    }
+    int = setInterval(displayTimer,10);
+    gameOver.textContent = ""
+    tryAgain.textContent = ""
+        
+}
+pet.reset()
+renderData()
 });
 
 function displayTimer(){
@@ -154,7 +216,7 @@ function displayTimer(){
     if(milliseconds == 1000){
         milliseconds = 0;
         seconds++;
-        console.log(pet.health)
+        // console.log(pet.health)
         if(seconds == 60){
             seconds = 0;
             minutes++;
@@ -170,15 +232,21 @@ function displayTimer(){
  let m = minutes < 10 ? "0" + minutes : minutes;
  let s = seconds < 10 ? "0" + seconds : seconds;
  let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
-tempHealth = pet.health -= 1/100 // one less health per second
- if (pet.health >= 100){
-    pet.health = 100;
-} 
-if (pet.health <= 0){
-    pet.health = 0
-}
-pet.health = tempHealth
+ 
+// pet.health -= 1/100 // one less health per second
+//  if (pet.health >= 100){
+//     pet.health = 100;
+// } 
+// if (pet.health <= 0){
+//     pet.health = 0
+// }
+checkCondition()
 pet.healthRounded = Math.ceil(pet.health)
+rand = Math.floor((Math.random()*6))
+pet.makeArr(pet.hunger, pet.thirst, pet.happiness, pet.cleanliness,pet.health)
+pet.arr[rand] = pet.arr[rand] -Math.ceil(Math.random()*40)/400
+// console.log(pet.arr)
+pet.setFromArr(pet.arr)
  renderData()
  timerRef.innerHTML = ` ${h} : ${m} : ${s}`;
 }
