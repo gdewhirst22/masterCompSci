@@ -117,9 +117,9 @@ function checkCondition() {
     }
 
     if (pet.happiness <= 30) {
-        image.src = "./images/pikaTired.png";
+        image.src = "/pikaTired.png";
     } else {
-        image.src = "./images/pikaNormal.png";
+        image.src = "/pikaNormal.png";
     }
     pet.win = pet.health >= 90 & pet.hunger >= 90 & pet.thirst >= 90 & pet.happiness >= 90 & pet.cleanliness >= 90
     console.log(pet.win)
