@@ -230,6 +230,24 @@ document.getElementById('resetTimer').addEventListener('click', ()=>{
         window["attr" + (i+1)].style.color = "grey"
         // console.log(window["attr" + (i+1)])
     }
+    for(i= Math.min(3,pet2.unique.length); i<pet2.unique.length;i++){
+        // console.log(Math.min(3,pet2.unique.length))
+        // console.log(window["attr" + (i+1) + "Pet"].textContent)
+        //remove elements rather than remove text
+        // let lastItem2 = document.querySelector('button:last-child');
+        
+        let list = document.getElementsByTagName('ul')[0];
+        let list2 = document.getElementsByTagName('ul')[1];
+        let lastItem = list.querySelector('p:last-child');
+        let lastItem2 = list2.querySelector('button:last-child');
+        console.log(list.childElementCount)
+        if(list.childElementCount > 3){
+        list.removeChild(lastItem);
+        list2.removeChild(lastItem2)
+        // window["attr" + (i+1) + "Pet"].textContent = ""
+        // window["attr" + (i+1)].textContent = ""
+        }
+    }
     //grey out buttons
     } else {
         resetTimer.textContent = "Reset Game"
@@ -256,6 +274,25 @@ document.getElementById('resetTimer').addEventListener('click', ()=>{
 pet.reset()
 renderData()
 });
+document.getElementById('remove').addEventListener('click', ()=>{
+// for(i= Math.min(3,pet2.unique.length); i<pet2.unique.length;i++){
+    // console.log(Math.min(3,pet2.unique.length))
+    // console.log(window["attr" + (i+1) + "Pet"].textContent)
+    //remove elements rather than remove text
+    // let lastItem2 = document.querySelector('button:last-child');
+    let list = document.getElementsByTagName('ul')[0];
+    let list2 = document.getElementsByTagName('ul')[1];
+    let lastItem = list.querySelector('p:last-child');
+    let lastItem2 = list2.querySelector('button:last-child');
+    if(list.childElementCount > 0){
+    list.removeChild(lastItem);
+    list2.removeChild(lastItem2)
+    pet2.unique.pop()
+    // window["attr" + (i+1) + "Pet"].textContent = ""
+    // window["attr" + (i+1)].textContent = ""
+    }
+}
+)
 
 function displayTimer(){
     milliseconds+=10;
@@ -342,6 +379,7 @@ button.addEventListener("click", ()=> {
     list2.appendChild(listItem2)
     // eval(input).textContent = `${input}: ${Math.ceil(pet2.unique[pet2.unique.length])}`
     input.value = ""
+    console.log(pet2.unique.length)
     window["attr" + pet2.unique.length + "Pet"] = listItem
     window["attr" + pet2.unique.length] = listItem2
     if(resetTimer.textContent == "Start Game"){
@@ -473,7 +511,7 @@ function renderData2() {
     for(i = 0; i<pet2.unique.length; i++){
         str = "attr" + (i+1) + "Pet"
         // console.log(eval("attr" + (i+1) + "Pet"))
-        eval("attr" + (i+1) + "Pet").textContent = `${eval("attr" + (i+1)).textContent}: ${Math.ceil(pet2.unique[i])}: edit`
+        eval("attr" + (i+1) + "Pet").textContent = `${eval("attr" + (i+1)).textContent}: ${Math.ceil(pet2.unique[i])}`
         // console.log(pet2.unique);
     // thirst.textContent = `quenchedness: ${Math.ceil(pet.thirst)}`;
     // hunger.textContent = `nourishment: ${Math.ceil(pet.hunger)}`;
