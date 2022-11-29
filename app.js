@@ -443,6 +443,7 @@ button.addEventListener("click", ()=> {
 let pet2 = {
     // unique: [attribute1, attribute2, attribute3],
     unique: [50,50,50],
+    // attrList: [attr1, attr2, attr3],
     attr1: 50,
     attr2: 50,
     attr3: 50,
@@ -562,9 +563,9 @@ for(i = 0; i<pet2.unique.length; i++){
     window["attr" + (i+1)].style.color = "grey"
     // console.log(window["attr" + (i+1)])
 }
-var input2 = document.createElement("input");
-console.log(input2)
-input2.setAttribute('text', "text");
+// var input2 = document.createElement("input");
+// console.log(input2)
+// input2.setAttribute('text', "text");
 
 document.addEventListener("click", (event) => {
     if(resetTimer.textContent == "Reset Game"){
@@ -572,8 +573,20 @@ document.addEventListener("click", (event) => {
     // console.log(event.target.textContent.slice(-1))
 //    varr = eval(event.target.textContent.slice(-1))
 //    console.log(event.target.textContent.slice(-1))
+// console.log(event)
+for(i = 0; i<pet2.unique.length; i++){
+    // str = "attr" + (i+1) + "Pet"
+    // console.log(eval("attr" + (i+1) + "Pet"))
+    if(eval("attr" + (i+1)).textContent == `${event.target.textContent}`){
     rand = Math.ceil(Math.random()*40)
-    pet2.selectFeedButton(rand, event.target.textContent.slice(-1)-1);
+    //gives name of event target e.g. attribute4. Now match this with position in List
+    // console.log(event.target.textContent)
+    //match string with list
+    // console.log(list[4].toString)
+    //.split(":")
+    pet2.selectFeedButton(rand, i);
+    }
+}
     // console.log(pet2.attr1)
     checkCondition2();
     flag = true;
