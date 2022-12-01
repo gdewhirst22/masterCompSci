@@ -1,0 +1,89 @@
+p {
+    font-size: 20px;
+} /* makes all paragraph tagged text to 20px */
+
+h1 {
+    color: grey;
+    font-size: 60px;
+}
+
+/* * is a wildcard that matches all tags */
+* {
+    font-family: Arial; 
+}
+
+/* Refer to element in html by name */
+
+#animal {
+    color: goldenrod
+}
+
+.navbar2 {
+    background-color: grey;
+    
+}
+.navbar2 img {
+    /* height: 30%; */
+    /* padding-top: 100%; */
+    width: 20px;
+    background-color: grey;
+
+}
+
+#navbar {
+    height: 100px;
+    background-color: grey;
+    /* justify-content: displays text in centre of bar; */
+    justify-content: center;
+    justify-content: center;
+    /* justify-content: flex-end; */
+    /* justify-content: space-around; */
+    /* flex displays in middle with no gaps */
+    display: flex;
+    align-items: center;
+    border-color: red;
+    border-style: solid;
+    /* padding-top: 60px;
+    padding-bottom: 20px; */
+    /* flex-grow:calc(10) */
+}
+img {
+    width: 50%;
+}
+
+a:link {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+/* mouse over link */
+a:hover {
+    color: hotpink;
+    /* background-color:green; */
+  }
+  
+  /* selected link */
+  a:active {
+    /* color: blue; */
+    /* background-color: green; */
+  }
+
+  .container {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+  }
+  #websiteTitle {
+    justify-content: center;
+    display: flex
+  }
+
+  /* <img src="https://tinyurl.com/yreftasa"> {
+
+  } */

@@ -1,0 +1,23 @@
+3 languages, html, css, js
+standalone tags
+<br> line brea
+<img>
+
+external style sheet most often used
+# for id
+. for class
+
+jsdom
+
+i = document...TagName('p')
+i[0]
+creates an array: all the data entries with taps <p>
+document.querySelector()
+finds first match
+document.querySelectorAll()
+
+junior software developer portfolio
+end of week 4 soft DL and same for cyberpet
+a stretch: more vocally active
+employability sessions for me ask jenny
+

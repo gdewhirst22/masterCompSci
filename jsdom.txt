@@ -1,0 +1,87 @@
+3 languages, html, css, js
+standalone tags
+<br> line brea
+<img>
+
+external style sheet most often used
+# for id
+. for class
+
+jsdom
+
+i = document...TagName('p')
+i[0]
+creates an array: all the data entries with taps <p>
+document.querySelector()
+finds first match
+document.querySelectorAll()
+
+
+<button id="button" onclick = "example()"
+document.querySelectorAll("li");
+//query selector is easier
+
+on click lower the pet hunger levels etc with some conditional logic (as a check event thing)
+counting down dynamic time an idea
+build user interface in html
+start game button
+conditional picture based on hunger levels etc
+mouseover buttons
+
+gameover flag
+clockstart w3 schools
+https://www.w3schools.com/graphics/canvas_clock_start.asp
+
+variables + values unique to type of pet
+with unique object
+video about expectations at end of 23rds video
+
+basically put initial timer as 0 and then put health -= 20* #minutes/3
+probably don't show timer
+
+reset on start done
+make to nearest integer done
+add game over screen done
+end game done
+show only seconds not ms done
+
+second pet
+make it look good
+unique attributes for each pet
+
+decay for all attributes
+try again - perhaps make code more general without double hardcode
+
+all 5 buttons
+put in trello
+maybe all decay over time at different rates
+
+impossible to use buttons before start
+grey out buttons in this instance
+button logic
+
+start again clickable done
+think about what to do with both start buttons
+
+could make the decay attribute random
+start/continue
+
+pause, continue, start game -> reset game -> start game
+
+second pet type = 2
+petType = 2
+attributes
+attribute 1
+attribute 2
+
+unique array for feed buttons
+
+attribute 3
+attribute 4
+
+fill array
+for input, add the data to unique then it will work
+unique.push(
+
+
+on reset, remove all new attributes
