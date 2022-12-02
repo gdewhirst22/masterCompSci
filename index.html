@@ -1,44 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href = "style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <div id="navbar">
-    <div class = "container">
-    <a href ="about.html" target="_blank"> About</a>
-</div>
-<div class = "container">
-    <a href = "contact.html" target="_blank"> Contact</a></div>
-    <div class = "container">
-        <p>extra</p>
-<br>
-<p>text</p></div>
-</div>
-<h1 id="websiteTitle">Website</h1>
-<div class="navbar2">
-    <img src="https://uxwing.com/wp-content/themes/uxwing/download/animals-and-birds/cat-animal-icon.png">
-    <a href = '#'> Animals</a>
-    <a href = '#'> Hobbies</a>
-    <a href = '#'> Bands</a>
-    <img src="data:image/png;base64,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">
-    <a href="https://youtube.com" target="_blank">Youtube</a>
-</div>
-
+    <link rel="stylesheet" href="./main.css">
+    <title>Cyberpet Example</title>
 </head>
 <body>
+    <div class="timerDisplay">
+        00 : 00 : 00
+     </div>
+     <div class="buttons">
+        <button id="pauseTimer">Pause</button>
+        <button id="startTimer">Continue</button>
+        <button id="resetTimer">Start Game</button>
+      </div>
+    <div id="container">
+        <div id="image-container">
+            <img id="petimg" src="./images/pikaNormal.png">
+        </div>
+        <p id="health">example</p>
+        <p id="hunger">example</p>
+        <p id="thirst">example</p>
+        <p id="cleanliness">example</p>
+        <p id="happiness">example</p>
+        <div id="button-container">
+            <button id="feed">feed</button>
+            <button id="drink">give drink</button>
+            <button id="play">play</button>
+            <button id="clean">clean</button>
+        </div>
+        <div><p id="gameOverWin"></p>
+        </div>
+        <p id="tryAgain"></p>
+    </div>
+    <div id="container">
+        <input id="input" type="text">
+        <button id="submit">submit</button>
+        <div id="image-container">
+            <img id="petimg" src="./images/pikaNormal.png">
+        </div>
+        
+        <!-- <pi> -->
+        <ul>
+        <p id="attr1Pet">example</p>
+        <p id="attr2Pet">example</p>
+        <p id="attr3Pet">example</p>
+    </ul>
+        <!-- </pi> -->
+        <ul>
+        <!-- <div id="button-container"> -->
+            <button id="attr1">attribute1</button>
+            <button id="attr2">attribute2</button>
+            <button id="attr3">attribute3</button>
+        <!-- </div> -->
+    </ul>
     <br>
-    <br>
+    <button id="remove">remove</button>
+    </div>
     
-    <p>Today is cloudy!</p>
-    <a href="https://wearecodenation.com" target="_blank">Code Nation</a>
-    <h2 id="animal">My Favourite Animal</h2>
-    <img src="https://tinyurl.com/yreftasa" alt = "A cute dog">
-
-   
-<!-- flex box -->
-
+    <script src="./app.js"></script>
+    <!-- <script src="./app.js"></script> -->
 </body>
+</html><!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./main.css">
+    <title>Cyberpet Example</title>
+</head>
 </html>
